@@ -17,17 +17,17 @@ ANDROID_BOOTIMG_TAGS_RAM_BASE = "0x80000100"
 inherit kernel_android
 
 SRC_URI = " \
-  git://github.com/reivilibre/android_kernel_motorola_msm8937.git;branch=halium-7.1 \
+  git://github.com/Hacker1245/android_kernel_motorola_msm8937-1.git;branch=lineage-15.1-64 \
 "
 S = "${WORKDIR}/git"
 
 do_configure_prepend() {
-    cp -v -f ${S}/arch/arm/configs/cedric_defconfig ${WORKDIR}/defconfig
+    cp -v -f ${S}/arch/arm64/configs/cedric_defconfig ${WORKDIR}/defconfig
 }
 
-SRCREV = "348fe0b00ca7d10855fdd0e4d1119ef668be3aa6"
+SRCREV = "83a120ef9189753d147643735009c864b8beab6e"
 
-KV = "3.18.49"
+KV = "3.18.113"
 PV = "${KV}+gitr${SRCPV}"
 # for bumping PR bump MACHINE_KERNEL_PR in the machine config
 inherit machine_kernel_pr
